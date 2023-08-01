@@ -1,9 +1,9 @@
-package com.example.bottomnavigationbar_1
+package com.example.main_bottom
 import android.content.Intent
 import android.os.Bundle
 import android.widget.ImageButton
 import androidx.appcompat.app.AppCompatActivity
-import com.example.main_bottom.R
+
 
 class SettingActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

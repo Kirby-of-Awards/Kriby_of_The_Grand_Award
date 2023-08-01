@@ -1,5 +1,4 @@
-package com.example.bottomnavigationbar_1
-
+package com.example.main_bottom
 
 
 
@@ -10,7 +9,6 @@ import android.content.Context
 import android.content.Intent
 import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
-import com.example.main_bottom.R
 
 
 class FirstActivity : AppCompatActivity() {

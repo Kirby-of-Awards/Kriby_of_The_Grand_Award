@@ -52,6 +52,8 @@
             android:layout_margin="10dp"
             app:cardCornerRadius="8dp">
 
+
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -63,6 +65,17 @@
                 android:id="@+id/reviewText"
                 android:textStyle="bold"
                 android:background="@drawable/review_list" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="음식이름"
+                android:gravity="center"
+                android:layout_gravity="top"
+                android:padding="2dp"
+                android:textColor="#000000"
+                android:id="@+id/TitleText"
+                android:textStyle="bold"
+                android:background="@drawable/gray_border" />
 
         </androidx.cardview.widget.CardView>
 

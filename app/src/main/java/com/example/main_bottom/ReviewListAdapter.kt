@@ -1,13 +1,12 @@
-package com.example.bottomnavigationbar_1
+package com.example.main_bottom
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
 import android.widget.TextView
-import com.example.main_bottom.R
 
-class ReviewListAdapter(private val context: Context, private val reviewList: List<String>) : BaseAdapter() {
+class ReviewListAdapter(private val context: Context, private val reviewList: List<Review>) : BaseAdapter() {
 
     override fun getCount(): Int {
         return reviewList.size
@@ -27,12 +26,13 @@ class ReviewListAdapter(private val context: Context, private val reviewList: Li
             v = LayoutInflater.from(context).inflate(R.layout.review, viewGroup, false)
         }
 
-        val reviewText = v!!.findViewById<TextView>(R.id.reviewText)
+        val foodNameText = v!!.findViewById<TextView>(R.id.TitleText)
+        val reviewText = v.findViewById<TextView>(R.id.reviewText)
 
-        val reviewData = reviewList[i]
-        reviewText.text = reviewData
+        // Set the data to the respective TextViews
+        foodNameText.text = reviewList[i].foodName
+        reviewText.text = reviewList[i].review
 
         return v
     }
 }
-

@@ -1,16 +1,15 @@
-package com.example.bottomnavigationbar_1
+package com.example.main_bottom
 
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.content.pm.ActivityInfo
 import android.database.Cursor
-import android.database.sqlite.SQLiteDatabase
 import android.os.Bundle
 import android.widget.Button
+import android.widget.ImageButton
 import android.widget.LinearLayout
 import android.widget.ListView
 import androidx.appcompat.app.AppCompatActivity
-import com.example.main_bottom.R
 
 class NoticeActivity : AppCompatActivity() {
 
@@ -21,10 +20,17 @@ class NoticeActivity : AppCompatActivity() {
         var userID: String? = null
     }
 
+
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.notice_activity)
+
+        val backBtn = findViewById<ImageButton>(R.id.backbtn)
+        backBtn.setOnClickListener {
+            onBackPressed()
+        }
+
         requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
 
         userID = intent.getStringExtra("userID")
@@ -54,8 +60,11 @@ class NoticeActivity : AppCompatActivity() {
 
     @SuppressLint("Range")
     private fun loadNoticeDataFromDB() {
-        val dbPath = "/data/data/com.example.bottomnavigationbar_1/databases/notice.db"
-        val db = SQLiteDatabase.openDatabase(dbPath, null, SQLiteDatabase.OPEN_READWRITE)
+        // Create an instance of the DBManager with appropriate arguments
+        val dbManager = DBManager(this, "notice.db", null, 1)
+
+        // Get a readable database instance from the DBManager
+        val db = dbManager.readableDatabase
 
         val query = "SELECT * FROM NOTICE"
         val cursor: Cursor = db.rawQuery(query, null)

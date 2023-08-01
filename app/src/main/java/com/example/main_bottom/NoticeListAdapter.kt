@@ -1,4 +1,4 @@
-package com.example.bottomnavigationbar_1
+package com.example.main_bottom
 
 import android.content.Context
 import android.content.Intent
@@ -7,7 +7,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
 import android.widget.TextView
-import com.example.main_bottom.R
 
 class NoticeListAdapter(private val context: Context, private val noticeList: List<Notice>) : BaseAdapter() {
 

@@ -1,16 +1,18 @@
-package com.example.bottomnavigationbar_1
+package com.example.main_bottom
 
+import android.annotation.SuppressLint
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.MenuItem
 import android.widget.EditText
 import android.widget.Button
 import android.widget.ImageButton
 import android.widget.Toast
-import com.example.main_bottom.R
 
 
-class WriteActivity : AppCompatActivity() {
+class Recipe : AppCompatActivity() {
     lateinit var review_backbtn: ImageButton
     lateinit var registerbutton: Button
     lateinit var reviewbox: EditText
@@ -18,9 +20,17 @@ class WriteActivity : AppCompatActivity() {
     lateinit var review_btn: ImageButton
     var TAG: String = "WriteReview"
 
+    @SuppressLint("WrongViewCast")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.review_write)
+
+        val reviewBtn = findViewById<Button>(R.id.button2)
+        reviewBtn.setOnClickListener {
+
+            val intent = Intent(this, ReviewActivity::class.java)
+            startActivity(intent)
+        }
 
 
         review_backbtn = findViewById(R.id.review_backbtn)
@@ -51,6 +61,26 @@ class WriteActivity : AppCompatActivity() {
         }
 
 
+    }
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when(item?.itemId){
+            R.id.action_home -> {
+                val intent = Intent(this, MainActivity::class.java)
+                startActivity(intent)
+                return true
+            }
+            R.id.action_timer -> {
+                val intent = Intent(this, Timer::class.java)
+                startActivity(intent)
+                return true
+            }
+            R.id.action_setting -> {
+                val intent = Intent(this, Setting::class.java)
+                startActivity(intent)
+                return true
+            }
+        }
+        return super.onOptionsItemSelected(item)
     }
 }
 

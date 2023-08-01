@@ -1,4 +1,5 @@
-package com.example.bottomnavigationbar_1
+package com.example.main_bottom
+import android.annotation.SuppressLint
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteDatabase.CursorFactory
@@ -35,5 +36,24 @@ class DBManager(
 
         db.execSQL("INSERT INTO reviewTBL VALUES('"+foodName+"','"+reviewbox+"');")
         db.close()
+    }
+    @SuppressLint("Range")
+    fun getAllReviews(): List<Review> {
+        val reviewList = mutableListOf<Review>()
+        val db = readableDatabase
+        val cursor = db.rawQuery("SELECT * FROM reviewTBL", null)
+
+        if (cursor.moveToFirst()) {
+            do {
+                val foodName = cursor.getString(cursor.getColumnIndex("gName"))
+                val reviewText = cursor.getString(cursor.getColumnIndex("gReview"))
+                reviewList.add(Review(foodName, reviewText))
+            } while (cursor.moveToNext())
+        }
+
+        cursor.close()
+        db.close()
+
+        return reviewList
     }
 }
