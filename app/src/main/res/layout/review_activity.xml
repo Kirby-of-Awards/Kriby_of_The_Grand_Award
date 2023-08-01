@@ -96,7 +96,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/imageButton7"
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
-        app:layout_constraintVertical_bias="0.542"
+        app:layout_constraintVertical_bias="0.42"
         app:srcCompat="@drawable/review_btn"
         tools:ignore="MissingConstraints" />
 
@@ -106,9 +106,10 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="54dp"
         android:layout_marginEnd="305dp"
-        android:text="음식이름"
+        android:text="요리사"
+        android:fontFamily="@font/ubuntu"
         android:textColor="#000000"
-        android:textSize="50dp"
+        android:textSize="30dp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/imageButton7"
         app:layout_constraintEnd_toEndOf="parent"
@@ -117,5 +118,23 @@
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
         tools:ignore="MissingConstraints" />
 
+    <TextView
+        android:id="@+id/reviewText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="75dp"
+        android:layout_marginEnd="146dp"
+        android:layout_marginBottom="75dp"
+        android:text="님의 리뷰"
+        android:fontFamily="@font/ubuntu"
+        android:textColor="#000000"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/imageButton9"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/foodName"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
+        tools:ignore="MissingConstraints" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
