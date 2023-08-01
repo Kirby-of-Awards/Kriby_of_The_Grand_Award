@@ -1,9 +1,10 @@
-package com.example.guru2
+package com.example.bottomnavigationbar_1
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.*
 import android.util.Log
+import com.example.main_bottom.R
 
 
 class RegisterActivity : AppCompatActivity() {

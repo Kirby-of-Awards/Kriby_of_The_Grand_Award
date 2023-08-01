@@ -1,4 +1,7 @@
-package com.example.guru2
+package com.example.bottomnavigationbar_1
+
+
+
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -7,9 +10,10 @@ import android.content.Context
 import android.content.Intent
 import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
+import com.example.main_bottom.R
 
 
-class LoginActivity : AppCompatActivity() {
+class FirstActivity : AppCompatActivity() {
     lateinit var dbManager: DBManager
     lateinit var sqliteDB: SQLiteDatabase
 
@@ -67,9 +71,9 @@ class LoginActivity : AppCompatActivity() {
                 finish()
             }   else {
                 if(strID.isEmpty() || strPassword.isEmpty()) {
-                    Toast.makeText(this@LoginActivity, "아이디와 비밀번호를 입력해주세요.", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this@FirstActivity, "아이디와 비밀번호를 입력해주세요.", Toast.LENGTH_SHORT).show()
                 }   else {
-                    Toast.makeText(this@LoginActivity, "아이디 또는 비밀번호가 틀렸습니다.", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this@FirstActivity, "아이디 또는 비밀번호가 틀렸습니다.", Toast.LENGTH_SHORT).show()
                 }
             }
         }

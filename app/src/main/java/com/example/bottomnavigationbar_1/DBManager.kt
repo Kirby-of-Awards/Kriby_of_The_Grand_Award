@@ -1,5 +1,4 @@
-package com.example.guru2
-
+package com.example.bottomnavigationbar_1
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteDatabase.CursorFactory
@@ -14,16 +13,14 @@ class DBManager(
 ) : SQLiteOpenHelper(context, name, factory, version) {
     override fun onCreate(db: SQLiteDatabase?) {
         db!!.execSQL("CREATE TABLE User (id text PRIMARY KEY, name text, password text)")
-        db!!.execSQL("CREATE TABLE Directory (dirname text, endDate text)")
-        db!!.execSQL("CREATE TABLE File (fileName text PRIMARY KEY, dirName text, addFile text, memo text)")
-        db!!.execSQL("CREATE TABLE TodoList(data DATE not null, list text, isChecked int)")
+        db!!.execSQL("CREATE TABLE reviewTBL (gName CHAR(20) PRIMARY KEY,gReview CHAR(100));")
+
     }
 
     override fun onUpgrade(db: SQLiteDatabase?, oldVersion: Int, newVersion: Int) {
         db!!.execSQL("DROP TABLE IF EXISTS User")
-        db!!.execSQL("DROP TABLE IF EXISTS Directory")
-        db!!.execSQL("DROP TABLE IF EXISTS File")
-        db!!.execSQL("DROP TABLE IF EXISTS TodoList")
+        db!!.execSQL("DROP TABLE IF EXISTS reviewTBL")
+
         onCreate(db)
     }
 
@@ -31,6 +28,12 @@ class DBManager(
         var db = this.writableDatabase
 
         db.execSQL("INSERT INTO User VALUES('" + name + "'" + ", '" + id + "'" + ", '" + password + "');")
+        db.close()
+    }
+    fun insertReview(foodName: String, reviewbox: String) {
+        var db = this.writableDatabase
+
+        db.execSQL("INSERT INTO reviewTBL VALUES('"+foodName+"','"+reviewbox+"');")
         db.close()
     }
 }

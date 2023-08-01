@@ -1,4 +1,4 @@
-package com.example.bottomnavigationbar_1
+package com.example.main_bottom
 
 import org.junit.Test
 
