@@ -9,14 +9,14 @@
 
         <activity android:exported="false" android:name=".Setting"/>
 
-        <activity android:exported="true" android:name=".MainActivity">
+        <activity android:exported="true" android:name=".FirstActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
 
-
+        <activity android:name="com.example.main_bottom.MainActivity"></activity>
         <activity android:name="com.example.main_bottom.ModifyActivity"></activity>
 
         <activity android:name="com.example.main_bottom.SettingActivity"></activity>

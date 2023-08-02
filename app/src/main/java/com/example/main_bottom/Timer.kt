@@ -27,7 +27,6 @@ class Timer : AppCompatActivity() {
     lateinit var labButton: Button
     lateinit var resetTab: FloatingActionButton
     lateinit var timeEditText: EditText
-    lateinit var timerSet: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -44,7 +43,6 @@ class Timer : AppCompatActivity() {
         labButton=findViewById(R.id.labButton)
         resetTab=findViewById(R.id.resetTab)
         timeEditText = findViewById(R.id.timeEditText)
-        timerSet=findViewById(R.id.timerSet)
 
 
         fab.setOnClickListener{
@@ -69,10 +67,7 @@ class Timer : AppCompatActivity() {
         timeEditText.setOnClickListener {
             time = timeEditText.text.toString().toInt()*60*1000
         }
-        timerSet.setOnClickListener {
-            time = timeEditText.text.toString().toInt()*60*1000
-            start()
-        }
+
 
         return true
     }

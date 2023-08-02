@@ -88,7 +88,7 @@
         android:id="@+id/imageButton9"
         android:layout_width="70dp"
         android:layout_height="24dp"
-        android:layout_marginTop="133dp"
+        android:layout_marginTop="100dp"
         android:layout_marginEnd="211dp"
         android:layout_marginBottom="10dp"
         android:background="@android:color/transparent"
@@ -106,7 +106,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="54dp"
         android:layout_marginEnd="305dp"
-        android:text="요리사"
+        android:text="요리사 님의 리뷰"
         android:fontFamily="@font/ubuntu"
         android:textColor="#000000"
         android:textSize="30dp"
@@ -118,23 +118,6 @@
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
         tools:ignore="MissingConstraints" />
 
-    <TextView
-        android:id="@+id/reviewText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="75dp"
-        android:layout_marginEnd="146dp"
-        android:layout_marginBottom="75dp"
-        android:text="님의 리뷰"
-        android:fontFamily="@font/ubuntu"
-        android:textColor="#000000"
-        android:textSize="30dp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/imageButton9"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/foodName"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
-        tools:ignore="MissingConstraints" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
