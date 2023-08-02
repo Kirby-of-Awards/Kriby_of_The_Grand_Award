@@ -1,5 +1,6 @@
 package com.example.main_bottom
 
+import android.content.Context
 import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
 import androidx.appcompat.app.AppCompatActivity
@@ -64,6 +65,10 @@ class ModifyActivity : AppCompatActivity() {
                     sqliteDB.close()
 
                     Toast.makeText(this, "이름과 비밀번호가 변경되었습니다.", Toast.LENGTH_SHORT).show()
+                    val userInfo = getSharedPreferences("userInfo", Context.MODE_PRIVATE)
+                    val editor = userInfo.edit()
+                    editor.putString("userName", strName)
+                    editor.apply()
 
                 } else {
                     /* 아이디가 존재하지 않을 경우 */

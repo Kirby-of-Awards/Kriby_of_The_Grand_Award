@@ -59,7 +59,7 @@ class FirstActivity : AppCompatActivity() {
                 editor.putString("userName", name)
                 editor.apply()
 
-                val intent = Intent(this, HomeActivity::class.java)
+                val intent = Intent(this@FirstActivity, MainActivity::class.java)
                 startActivity(intent)
 
                 cursor.close()

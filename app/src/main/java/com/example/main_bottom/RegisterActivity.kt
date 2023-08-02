@@ -24,12 +24,7 @@ class RegisterActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_register)
-//        val registerBtn = findViewById<ImageButton>(R.id.register_btn)
-//        registerBtn.setOnClickListener {
-//
-//            val intent = Intent(this, MainActivity::class.java)
-//            startActivity(intent)
-//        }
+
 
 
 
@@ -62,6 +57,9 @@ class RegisterActivity : AppCompatActivity() {
                 dbManager.insertUser(id, name, pw)
                 Log.d(TAG, "회원 정보 삽입")
                 Toast.makeText(this, "회원가입 성공!", Toast.LENGTH_SHORT).show()
+
+                val intent = Intent(this, MainActivity::class.java)
+                startActivity(intent)
 
                 finish()
             }

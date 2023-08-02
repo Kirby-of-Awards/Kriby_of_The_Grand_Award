@@ -61,11 +61,13 @@ class LoginActivity : AppCompatActivity() {
             if(cursor.count == 1) {
                 val userInfo = getSharedPreferences("userInfo", Context.MODE_PRIVATE)
                 val editor = userInfo.edit()
+                editor.putString("loggedInUserID", strID)  // 로그인한 회원의 아이디 저장
+                editor.apply()
                 editor.putString("userID", strID)
                 editor.putString("userName", name)
                 editor.apply()
 
-                val intent = Intent(this, HomeActivity::class.java)
+                val intent = Intent(this, MainActivity::class.java)
                 startActivity(intent)
 
                 cursor.close()

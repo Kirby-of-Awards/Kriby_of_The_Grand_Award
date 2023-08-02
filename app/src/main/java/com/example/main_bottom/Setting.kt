@@ -1,13 +1,14 @@
 package com.example.main_bottom
 
 import android.annotation.SuppressLint
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.ImageButton
-
+import android.widget.TextView
 
 class Setting : AppCompatActivity() {
     @SuppressLint("MissingInflatedId")
@@ -20,19 +21,27 @@ class Setting : AppCompatActivity() {
             finish()
         }
 
-
         val modifyBtn = findViewById<ImageButton>(R.id.imageButton)
         modifyBtn.setOnClickListener {
-
             val intent = Intent(this, ModifyActivity::class.java)
             startActivity(intent)
         }
 
         val announcementBtn = findViewById<ImageButton>(R.id.imageButton2)
         announcementBtn.setOnClickListener {
-
             val intent = Intent(this, NoticeActivity::class.java)
             startActivity(intent)
+        }
+
+        // Set the user's name in the TextView
+
+        val userInfo = getSharedPreferences("userInfo", Context.MODE_PRIVATE)
+        val userName = userInfo.getString("userName", null)
+
+        // Set the user's name in the TextView
+        val textView = findViewById<TextView>(R.id.textView2)
+        if (!userName.isNullOrEmpty()) {
+            textView.text = "$userName 님"
         }
     }
 
@@ -42,7 +51,7 @@ class Setting : AppCompatActivity() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        when(item?.itemId){
+        when (item?.itemId) {
             R.id.action_home -> {
                 val intent = Intent(this, MainActivity::class.java)
                 startActivity(intent)
